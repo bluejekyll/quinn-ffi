@@ -2,10 +2,15 @@
 name = "quinn-ffi"
 version = "0.1.0"
 authors = ["Benjamin Fry <benjaminfry@me.com>"]
-edition = "2018"
+
+# generates the cbinding, i.e. the headerfile
+build = "build.rs"
 
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
 quinn = "0.1"
+
+[build-dependencies]
+cbindgen = "0.6"
